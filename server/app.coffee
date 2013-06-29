@@ -118,6 +118,7 @@ App =
 						cities = [null, 'laval', 'montreal', 'longueuil', 'quebec'];
 						voteData = 
 							identity: req.query.From
+							time: new Date().getTime()
 							type:'call'
 
 						App._registerVote(cities[req.query.Digits], voteData)
