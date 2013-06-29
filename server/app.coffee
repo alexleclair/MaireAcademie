@@ -153,6 +153,7 @@ App =
 				type:data.type
 
 			if data.type == 'call'
+				data.identity = (data.identity+'').split(',')[0]
 				sendData.tel = data.identity.substr(0, data.identity.length-2);
 			
 

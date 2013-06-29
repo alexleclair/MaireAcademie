@@ -23,6 +23,7 @@ window.cityStats = "%%CITYSTATS%%";
 
 </head>
 <body>
+	<div id="fb-root"></div>
 	<section class="container">
 		<header class="a-center">
 			<h1>Maire Académie</h1>
@@ -66,11 +67,45 @@ window.cityStats = "%%CITYSTATS%%";
 					<span class="vote-count hide">0</span>
 					<span class="imgville" style="background-image:url(http://www.ameriquefrancaise.org/media-4410/Stade_Olympique_2.jpg)"></span>
 				</article>
-				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2F%CITY%.maireacademie.com&amp;send=false&amp;layout=standard&amp;width=273&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=80&amp;appId=360831954023413&amp;locale=fr_CA" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:293px; height:80px;" allowTransparency="true"></iframe>
+				<div class="fb-like" data-href="http://%CITY%.maireacademie.ca/" data-send="false" data-width="450" data-show-faces="false" data-layout="box_count" ></div>
 			</li>
 		</script>
 	</section>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 	<script src="./static/local/coffee/app.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-42100998-1', 'maireacademie.ca');
+	  ga('send', 'pageview');
+
+	</script>
+
+
+	<script>
+	  window.fbAsyncInit = function() {
+	    // init the FB JS SDK
+	    FB.init({
+	      appId      : '152911244753826',                        // App ID from the app dashboard
+	      xfbml      : true,                                  // Look for social plugins on the page
+	      status     : true                                 // Check Facebook Login status
+	    });
+
+	    App.initFacebook();
+	    
+	  };
+
+	  // Load the SDK asynchronously
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/all.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
 </body>
 </html>

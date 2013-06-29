@@ -16,8 +16,8 @@ App =
 		$skeleton = $('#skeleton-city')
 		for key of @config.cities
 			$city = $($skeleton.html())
-			$iframe = $city.find('iframe');
-			$iframe.attr('src', $iframe.attr('src').split('%CITY%').join(key))
+			$iframe = $city.find('.fb-like');
+			$iframe.attr('data-href', $iframe.attr('data-href').split('%CITY%').join(key))
 			$city.attr('data-city-id', key)
 			$city.find('.city-name').text(@config.cities[key]);
 			$city.hide();
@@ -33,7 +33,7 @@ App =
 			$tick = $($skeleton.html());
 
 			if data.type == 'call'
-				tel = data.tel.split('+').join('').substr(2);
+				tel = data.tel.split('+').join('').substr(1);
 				tel = tel.substr(0,3)+'-'+tel.substr(3,3) + '-' + tel.substr(6) + 'xx';
 				$tick.find('.tel').text(tel)
 
@@ -56,9 +56,14 @@ App =
 			$city.addClass('bignumber')
 		else
 			$city.removeClass('bignumber')
-
+	
+	initFacebook: ->
+		FB.Event.subscribe 'edge.create', (response)-> 
+			alert 'You liked the URL: ' + response
 
 window.App = App;
 
 $ ->
 	App.init()
+
+	    
