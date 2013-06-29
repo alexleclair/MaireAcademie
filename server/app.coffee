@@ -181,6 +181,14 @@ App =
 			#http://api.facebook.com/restserver.php?method=links.getStats&urls=http://montreal.maireacademie.ca/&format=json
 
 		_handleHttpRequest: (req, res) ->
+
+				allowedHosts = ['www.maireacademie.ca', 'laval.maireacademie.ca', 'montreal.maireacademie.ca', 'longueuil.maireacademie.ca', 'quebec.maireacademie.ca', '342da8a6.ngrok.com'];
+
+				if allowedHosts.indexOf(req.headers.host) == -1
+					res.setHeader 'Location', 'http://'+allowedHosts[0]
+					res.writeHead '302'
+					return res.end '';
+
 				file = req.url.split('?')[0];
 				file = if file == '/' then 'index.html' else file;
 				file = file.split('..').join('');

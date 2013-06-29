@@ -4309,3 +4309,8 @@ ul {
 .livefeed span {
   color: #d7dadb;
 }
+.fb-comments,
+.fb-comments > span,
+.fb-comments > span > iframe {
+  width: 100% !important;
+}
