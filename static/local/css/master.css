@@ -4215,6 +4215,7 @@ ul {
   margin-bottom: 10px;
   position: relative;
   background-color: #d7dadb;
+  background-image: url(img/stripe.png);
 }
 .container .resultats > li article > span {
   position: absolute;
@@ -4240,6 +4241,9 @@ ul {
   height: 100%;
   z-index: 0;
   background-size: cover;
+  background-position: center;
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 .container .resultats > li article .imgville,
 .container .resultats > li article div > a,
@@ -4284,14 +4288,14 @@ ul {
   .container .resultats > li:first-child iframe {
     margin-left: 0;
   }
-  .container .resultats > li:hover article > span {
-    opacity: 1;
-    filter: alpha(opacity=100);
-  }
-  .container .resultats > li:hover div {
-    opacity: 0;
-    filter: alpha(opacity=0);
-  }
+}
+.container .resultats > li:hover article > span {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.container .resultats > li:hover div {
+  opacity: 0;
+  filter: alpha(opacity=0);
 }
 .livefeed > li {
   line-height: 25px;
