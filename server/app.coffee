@@ -14,7 +14,23 @@ App =
 				responses:
 					intro:'./twilio/intro.xml'
 					outro:'./twilio/outro.xml'
-		stats: {}
+		stats: 
+			laval:
+				likes:0
+				votes:0
+				total:0
+			montreal:
+				likes:0
+				votes:0
+				total:0
+			longueuil:
+				likes:0
+				votes:0
+				total:0
+			quebec:
+				likes:0
+				votes:0
+				total:0
 
 
 		init: (config)->
@@ -113,8 +129,18 @@ App =
 				return false
 
 			key = 'votes:'+city
-			console.log('New vote for '+city+' from '+data.identity)
-			App.io.sockets.emit('vote_count', clients);
+			console.log('New vote for '+city+' from '+data.identity);
+
+			sendData = 
+				city:city
+				type:data.type
+
+			if data.type == 'call'
+				sendData.tel = data.identity.substr(0, data.identity.length-2);
+			
+
+			App.io.sockets.emit 'vote', sendData;
+
 			if data.type == 'call'
 				return App.redisWorker.zadd 'maireacademie:votes:'+city, new Date().getTime(), JSON.stringify data;
 			else
@@ -124,8 +150,13 @@ App =
 			App.redisWorker.zcard 'maireacademie:votes:'+city, (err, callVotes)->
 				request = require("request");
 				request 'http://api.facebook.com/restserver.php?method=links.getStats&urls=http://'+city+'.maireacademie.ca/&format=json', (error, response, body)->
-					json = JSON.parse(body);
-					console.log json;
+					data = JSON.parse(body);
+					App.stats[city].votes = callVotes
+					App.stats[city].likes = data[0].like_count
+					App.stats[city].total = callVotes + data[0].like_count
+
+					App.io.sockets.emit 'stats', {city:city, stats:App.stats[city]};
+
 			#http://api.facebook.com/restserver.php?method=links.getStats&urls=http://montreal.maireacademie.ca/&format=json
 
 		_handleHttpRequest: (req, res) ->

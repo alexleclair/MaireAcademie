@@ -9,7 +9,9 @@
 
 	<link rel="stylesheet" type="text/css" href="/static/master-main.css">
 
-
+<script type="text/javascript">
+window.cityStats = "%%CITYSTATS%%";
+</script>
 
 </head>
 <body>
@@ -58,7 +60,22 @@
 			<li>514-xxx-xx06 <span>vient tout juste de voter pour</span> Montreal</li>
 			<li>Madame Pailleur <span>vient tout juste de voter via Facebook pour</span> Laval</li>
 		</ul>
+
+		<script type="text/html" id="skeleton-city">
+			<li class="col col-lg-3 city" data-city-id="">
+				<article>
+					<b>Vote pour <span class="city-name">Montreal</span></b>
+					<span class="vote-count hide">0</span>
+
+					<aside>
+						Stuff pour FB LIKE
+						<a href="">Like ta ville</a>
+					</aside>
+				</article>
+			</li>
+		</script>
 	</section>
-	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script src="./static/local/coffee/app.js"></script>
 </body>
 </html>
