@@ -15,7 +15,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" type="text/css" href="/static/master-main.css">
-	<script src="http://342da8a6.ngrok.com/socket.io/socket.io.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
 
 <script type="text/javascript">
 window.cityStats = "%%CITYSTATS%%";
