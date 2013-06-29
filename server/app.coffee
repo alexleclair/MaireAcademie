@@ -10,10 +10,12 @@ App =
 			redisHost:'top.30mars.ca'
 			redisPort:6379
 			wwwPath:'./../'
+			tickerMaxLength : 20
 			twilio:
 				responses:
 					intro:'./twilio/intro.xml'
 					outro:'./twilio/outro.xml'
+			updateStatsTimer:7000
 		stats: 
 			laval:
 				likes:0
@@ -31,6 +33,7 @@ App =
 				likes:0
 				votes:0
 				total:0
+		tickerData : []
 
 
 		init: (config)->
@@ -56,7 +59,21 @@ App =
 				  res.send(500, 'Oops ! Something went super wrong.');
 
 				@redisWorker = @redis.createClient(App.config.redisPort, App.config.redisHost)
-				@_updateCityStats('montreal');
+				
+				setInterval ->
+					App._updateCityStats('laval')
+					App._updateCityStats('longueuil')
+					App._updateCityStats('montreal')
+					App._updateCityStats('quebec')
+				, @config.updateStatsTimer
+
+				@io.on 'connection', (socket)->
+					#console.log 'connected'
+					for key of App.stats
+						socket.emit 'stats', {city:key, stats:App.stats[key]}
+
+					for i in [0...App.tickerData.length]
+						socket.emit 'vote', App.tickerData[i];
 
 		_handleAPICalls: (req, res) ->
 			parts = req.url.split('?')[0].split('/');
@@ -140,6 +157,9 @@ App =
 			
 
 			App.io.sockets.emit 'vote', sendData;
+			App.tickerData.push(sendData);
+			if App.tickerData.length > App.tickerMaxLength
+				App.tickerData.splice 0, (App.tickerData.length - App.tickerMaxLength)
 
 			if data.type == 'call'
 				return App.redisWorker.zadd 'maireacademie:votes:'+city, new Date().getTime(), JSON.stringify data;

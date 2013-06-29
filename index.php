@@ -8,6 +8,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
 	
 	<link rel="stylesheet" type="text/css" href="/static/master-main.css">
+	<script src="http://342da8a6.ngrok.com/socket.io/socket.io.js"></script>
 
 <script type="text/javascript">
 window.cityStats = "%%CITYSTATS%%";
@@ -37,15 +38,15 @@ window.cityStats = "%%CITYSTATS%%";
 		<hr>
 		
 		<h2>En direct</h2>
-		<ul class="livefeed">
-			<li>514-xxx-xx06 <span>vient tout juste de voter pour</span> Laval</li>
-			<li>514-xxx-xx06 <span>vient tout juste de voter pour</span> Montreal</li>
-			<li>514-xxx-xx06 <span>vient tout juste de voter pour</span> Longueuil</li>
-			<li>514-xxx-xx06 <span>vient tout juste de voter pour</span> Quebec</li>
-			<li>Régis Labeaume <span>like</span> Quebec. <span>Un vote de plus!</span></li>
-			<li>514-xxx-xx06 <span>vient tout juste de voter pour</span> Montreal</li>
-			<li>Madame Pailleur <span>vient tout juste de voter via Facebook pour</span> Laval</li>
+		<ul class="livefeed" id="ticker">
+			
 		</ul>
+		<script type="text/html" id="skeleton-vote-call">
+			<li><span class="tel">514-xxx-xxxx</span>vient tout juste de voter pour<span class="city">Hérouxville</span></li>
+		</script>
+		<script type="text/html" id="skeleton-vote-like">
+			<li>Un vote de plus pour <span class="city">Hérouxville</span></li>
+		</script>
 
 		<script type="text/html" id="skeleton-city">
 			<li class="col col-lg-3 city" data-city-id="">
