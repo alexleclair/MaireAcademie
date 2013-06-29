@@ -1,0 +1,90 @@
+/***
+	Variable
+***/
+
+@green:			#03a696;
+@greenLight:	#49c4be;
+@greenDark:		#445859;
+@beige:			#f1f2e4;
+@orange:		#ff7746;
+
+
+@marine:		#2c3e50;
+@red:			#fc4349;
+@gray:			#d7dadb;
+@blue:			#6dbcdb;
+
+/**
+	Utils
+**/
+
+.clear {
+	clear: both;
+}
+
+.box-align {
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+}
+
+/**
+	Style
+**/
+body {
+	background: url(img/noisy-texture-100x100-o4-d19-c-ffffff-t0.png);
+	color: @marine;
+	font-family: 'Fauna One', serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: @marine;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+h1 {
+
+}
+h2 {
+	color: @marine;
+	font-size: 24px;
+	border-bottom: 1px solid #ccc;
+}
+
+small {
+	color: @blue;
+}
+
+a {
+	color: @red;
+
+	&:hover {
+		color:	darken(@red, 20%);
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+ul {
+	padding: 0;
+	list-style: none;
+}
