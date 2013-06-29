@@ -4296,4 +4296,8 @@ ul {
 .livefeed > li {
   line-height: 25px;
   margin-bottom: 10px;
+  color: #dadcdd;
+}
+.livefeed span {
+  color: #d7dadb;
 }

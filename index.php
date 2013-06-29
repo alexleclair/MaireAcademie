@@ -50,7 +50,7 @@ window.cityStats = "%%CITYSTATS%%";
 			
 		</ul>
 		<script type="text/html" id="skeleton-vote-call">
-			<li><span class="tel">514-xxx-xxxx</span>vient tout juste de voter pour<span class="city">Hérouxville</span></li>
+			<li><span class="tel">514-xxx-xxxx</span> vient tout juste de voter pour <span class="city">Hérouxville</span></li>
 		</script>
 		<script type="text/html" id="skeleton-vote-like">
 			<li>Un vote de plus pour <span class="city">Hérouxville</span></li>
