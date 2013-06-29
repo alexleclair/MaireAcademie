@@ -65,7 +65,8 @@ App =
 	
 	initFacebook: ->
 		FB.Event.subscribe 'edge.create', (response)-> 
-			alert 'You liked the URL: ' + response
+			city = response.split('://')[1].split('.')[0];
+			$.get '/api/vote/'+city+'/?'+new Date().getTime()
 
 window.App = App;
 

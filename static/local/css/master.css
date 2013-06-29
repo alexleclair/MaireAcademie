@@ -4276,16 +4276,16 @@ ul {
   font-style: italic;
   color: #2c3e50;
 }
-.container .resultats > li iframe {
+.container .resultats > li .fb-like {
   width: 100% !important;
 }
 @media (min-width: 992px) {
-  .container .resultats > li iframe,
+  .container .resultats > li .fb-like,
   .container .resultats > li article {
     margin-left: 10px;
   }
   .container .resultats > li:first-child article,
-  .container .resultats > li:first-child iframe {
+  .container .resultats > li:first-child .fb-like {
     margin-left: 0;
   }
 }
@@ -4296,6 +4296,10 @@ ul {
 .container .resultats > li:hover div {
   opacity: 0;
   filter: alpha(opacity=0);
+}
+.container .resultats > li:hover div.fb-like {
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 .livefeed > li {
   line-height: 25px;
