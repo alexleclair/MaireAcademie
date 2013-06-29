@@ -15,7 +15,7 @@ App =
 				responses:
 					intro:'./twilio/intro.xml'
 					outro:'./twilio/outro.xml'
-			updateStatsTimer:7000
+			updateStatsTimer:5000
 		stats: 
 			laval:
 				likes:0
