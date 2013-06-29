@@ -8,6 +8,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" type="text/css" href="/static/master-main.css">
+	<script src="http://342da8a6.ngrok.com/socket.io/socket.io.js"></script>
 
 <script type="text/javascript">
 window.cityStats = "%%CITYSTATS%%";
@@ -38,27 +39,27 @@ window.cityStats = "%%CITYSTATS%%";
 		</ul>
 		
 		<h2>En direct</h2>
-		<ul class="livefeed">
-			<li>514-xxx-xx06 <span>vient tout juste de voter pour</span> Laval</li>
-			<li>514-xxx-xx06 <span>vient tout juste de voter pour</span> Montreal</li>
-			<li>514-xxx-xx06 <span>vient tout juste de voter pour</span> Longueuil</li>
-			<li>514-xxx-xx06 <span>vient tout juste de voter pour</span> Quebec</li>
-			<li>Régis Labeaume <span>like</span> Quebec. <span>Un vote de plus!</span></li>
-			<li>514-xxx-xx06 <span>vient tout juste de voter pour</span> Montreal</li>
-			<li>Madame Pailleur <span>vient tout juste de voter via Facebook pour</span> Laval</li>
+		<ul class="livefeed" id="ticker">
+			
 		</ul>
+		<script type="text/html" id="skeleton-vote-call">
+			<li><span class="tel">514-xxx-xxxx</span>vient tout juste de voter pour<span class="city">Hérouxville</span></li>
+		</script>
+		<script type="text/html" id="skeleton-vote-like">
+			<li>Un vote de plus pour <span class="city">Hérouxville</span></li>
+		</script>
 
 		<script type="text/html" id="skeleton-city">
 			<li class="col col-lg-3 city" data-city-id="">
 				<article>
-					<div class="visible-sm"><a href="tel:18666247329" >Vote pour Montreal</a></div>
+					<div class="visible-sm"><a href="tel:18666247329" >Vote pour <span class="city-name">Montreal</span></a></div>
 					<div class="hidden-sm">
-						<a href="" onclick="return false;">Vote pour Montreal</a>
+						<a href="" onclick="return false;">Vote pour <span class="city-name">Montreal</span></a>
 					</div>
-					<span>44</span>
+					<span class="vote-count hide">0</span>
 					<span class="imgville" style="background-image:url(http://www.ameriquefrancaise.org/media-4410/Stade_Olympique_2.jpg)"></span>
 				</article>
-				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fmontreal.maireacademie.com&amp;send=false&amp;layout=standard&amp;width=273&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=80&amp;appId=360831954023413" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:293px; height:80px;" allowTransparency="true"></iframe>
+				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2F%CITY%.maireacademie.com&amp;send=false&amp;layout=standard&amp;width=273&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=80&amp;appId=360831954023413&amp;locale=fr_CA" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:293px; height:80px;" allowTransparency="true"></iframe>
 			</li>
 		</script>
 	</section>
