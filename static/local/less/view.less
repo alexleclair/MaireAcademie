@@ -2,6 +2,7 @@
 
 	> header {
 
+		margin: 40px 0;
 		.lead {
 			font-size: 16px;
 		}
@@ -13,7 +14,7 @@
 			cursor: pointer;
 
 			article {
-				margin-left: 10px;
+				margin-bottom: 10px;
 				position: relative;
 				background-color: @gray;
 
@@ -30,13 +31,10 @@
 					color: @red;
 				}
 
-				&:hover {
-					aside {
-						.opacity(1);
-					}
-				}
+				
 
 				aside {
+					display: none;
 					.opacity(0);
 					.transition(all 0.2s ease);
 					font-size: 16px;
@@ -45,7 +43,7 @@
 					z-index: 4;
 				}
 
-				b,
+				> a,
 				> span,
 				aside {
 					min-height: 200px;
@@ -53,18 +51,44 @@
 					.box-align;
 				}
 
-				b {
+				a {
 					position: relative;
 					z-index: 2;
 					font-size: 22px;
 					font-style: italic;
+					color: @marine;
 				}
 			}
 			
-			&:first-child article {
-				margin-left: 0;
+
+			@media (min-width: @screen-tablet) and (max-width: @screen-tablet-max) {
+				article > aside {
+					min-height: auto;
+					position: static;
+					.opacity(1);
+					display: block;
+					text-align: center;
+					
+					a {
+						line-height: 30px;
+						font-size: 16px;
+					}
+				}
 			}
-			
+			@media (min-width: @screen-desktop) {
+				article {
+					margin-left: 10px;
+				}
+				&:first-child article {
+					margin-left: 0;
+				}
+
+				&:hover {
+					aside {
+						.opacity(1);
+					}
+				}
+			}
 						
 		}
 	}

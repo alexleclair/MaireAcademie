@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 	<link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
-	
+
 	<link rel="stylesheet" type="text/css" href="/static/master-main.css">
 
 
@@ -35,12 +35,11 @@
 		?>
 			<li class="col col-lg-3 ">
 				<article>
-					<b>Vote pour Montreal</b>
+					<a href="tel:18666247329">Vote pour Montreal</a>
 					<span>44</span>
 
 					<aside>
-						Stuff pour FB LIKE
-						<a href="">Like ta ville</a>
+						<a href="">Aime ta ville</a>
 					</aside>
 				</article>
 			</li>
@@ -48,7 +47,6 @@
 		}
 		?>
 		</ul>
-		<hr>
 		
 		<h2>En direct</h2>
 		<ul class="livefeed">
