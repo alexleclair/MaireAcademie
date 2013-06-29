@@ -49,10 +49,10 @@ window.cityStats = "%%CITYSTATS%%";
 		<script type="text/html" id="skeleton-city">
 			<li class="col col-lg-3 city" data-city-id="">
 				<article>
-					<a href="tel:18666247329">Vote pour Montreal</a>
-					<span>44</span>
+					<a href="tel:18666247329">Vote pour <span class="city-name">Montreal</span></a>
+					<span class="vote-count hide">0</span>
 				</article>
-				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fmontreal.maireacademie.com&amp;send=false&amp;layout=standard&amp;width=273&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=80&amp;appId=360831954023413" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:293px; height:80px;" allowTransparency="true"></iframe>
+				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2F%CITY%.maireacademie.com&amp;send=false&amp;layout=standard&amp;width=273&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=80&amp;appId=360831954023413&amp;locale=fr_CA" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:293px; height:80px;" allowTransparency="true"></iframe>
 			</li>
 		</script>
 	</section>

@@ -16,6 +16,8 @@ App =
 		$skeleton = $('#skeleton-city')
 		for key of @config.cities
 			$city = $($skeleton.html())
+			$iframe = $city.find('iframe');
+			$iframe.attr('src', $iframe.attr('src').split('%CITY%').join(key))
 			$city.attr('data-city-id', key)
 			$city.find('.city-name').text(@config.cities[key]);
 			$city.hide();
