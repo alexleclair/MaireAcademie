@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 	<link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
-	
+
 	<link rel="stylesheet" type="text/css" href="/static/master-main.css">
 	<script src="http://342da8a6.ngrok.com/socket.io/socket.io.js"></script>
 
@@ -33,9 +33,7 @@ window.cityStats = "%%CITYSTATS%%";
 
 		<h2>Résultats</h2>
 		<ul class="clearfix resultats">
-	
 		</ul>
-		<hr>
 		
 		<h2>En direct</h2>
 		<ul class="livefeed" id="ticker">
@@ -51,14 +49,10 @@ window.cityStats = "%%CITYSTATS%%";
 		<script type="text/html" id="skeleton-city">
 			<li class="col col-lg-3 city" data-city-id="">
 				<article>
-					<b>Vote pour <span class="city-name">Montreal</span></b>
-					<span class="vote-count hide">0</span>
-
-					<aside>
-						Stuff pour FB LIKE
-						<a href="">Like ta ville</a>
-					</aside>
+					<a href="tel:18666247329">Vote pour Montreal</a>
+					<span>44</span>
 				</article>
+				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fmontreal.maireacademie.com&amp;send=false&amp;layout=standard&amp;width=273&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=80&amp;appId=360831954023413" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:293px; height:80px;" allowTransparency="true"></iframe>
 			</li>
 		</script>
 	</section>

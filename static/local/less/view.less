@@ -2,6 +2,7 @@
 
 	> header {
 
+		margin: 40px 0;
 		.lead {
 			font-size: 16px;
 		}
@@ -13,11 +14,10 @@
 			cursor: pointer;
 
 			article {
-				margin-left: 10px;
+				margin-bottom: 10px;
 				position: relative;
 				background-color: @gray;
 
-				> aside,
 				> span {
 					position: absolute;
 					top: 0;
@@ -28,6 +28,39 @@
 					.opacity(.3);
 					font-size: 150px;
 					color: @red;
+					&.bignumber {
+						font-size: 120px;
+					}
+				}
+
+				
+
+				> a,
+				> span {
+					min-height: 200px;
+					margin: 0;
+					.box-align;
+				}
+
+				a {
+					position: relative;
+					z-index: 2;
+					font-size: 22px;
+					font-style: italic;
+					color: @marine;
+				}
+			}
+
+			@media (min-width: @screen-desktop) {
+				iframe,
+				article {
+					margin-left: 10px;
+				}
+				&:first-child  {
+					article,
+					iframe {
+						margin-left: 0;
+					}
 				}
 
 				&:hover {
@@ -35,37 +68,7 @@
 						.opacity(1);
 					}
 				}
-
-				aside {
-					.opacity(0);
-					.transition(all 0.2s ease);
-					font-size: 16px;
-					color: @marine;
-					background: @blue;
-					z-index: 4;
-				}
-
-				b,
-				> span,
-				aside {
-					min-height: 200px;
-					margin: 0;
-					.box-align;
-				}
-
-				b {
-					position: relative;
-					z-index: 2;
-					font-size: 22px;
-					font-style: italic;
-				}
-			}
-			
-			&:first-child article {
-				margin-left: 0;
-			}
-			
-						
+			}			
 		}
 	}
 }
