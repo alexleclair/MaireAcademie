@@ -190,7 +190,7 @@ App =
 					return res.end '';
 
 				file = req.url.split('?')[0];
-				file = if file == '/' then 'index.html' else file;
+				file = if file == '/' then 'index.php' else file;
 				file = file.split('..').join('');
 
 				path = __dirname + '/' + App.config.wwwPath + file;
