@@ -21,7 +21,7 @@ window.cityStats = "%%CITYSTATS%%";
 			<h1>Maire Académie</h1>
 			<div class="well">
 				<p class="lead">
-					Puisque aucun maire ne peut le faire, sauvez votre ville favorite.
+					Puisqu'aucun maire ne peut le faire, sauvez votre ville favorite.
 					<br>-<br>
 					4 villes en péril, 1 numéro facile. 1-866-MAIRE29 (1-866-624-7329)
 					<br>-<br>
@@ -39,9 +39,11 @@ window.cityStats = "%%CITYSTATS%%";
 		</ul>
 		
 		<h2>En direct</h2>
-		<ul class="livefeed" id="ticker">
-			
-		</ul>
+		<ul class="livefeed" id="ticker"></ul>
+
+		<h2>Il se dit</h2>
+		<div class="fb-comments" data-href="http://maireacademie.ca" data-width="470" data-num-posts="10"></div>
+
 		<script type="text/html" id="skeleton-vote-call">
 			<li><span class="tel">514-xxx-xxxx</span>vient tout juste de voter pour<span class="city">Hérouxville</span></li>
 		</script>
@@ -57,7 +59,7 @@ window.cityStats = "%%CITYSTATS%%";
 						<a href="" onclick="return false;">Vote pour <span class="city-name">Montreal</span></a>
 					</div>
 					<span class="vote-count hide">0</span>
-					<span class="imgville" style="background-image:url(http://www.ameriquefrancaise.org/media-4410/Stade_Olympique_2.jpg)"></span>
+					<span class="imgville" style=""></span>
 				</article>
 				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2F%CITY%.maireacademie.com&amp;send=false&amp;layout=standard&amp;width=273&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=80&amp;appId=360831954023413&amp;locale=fr_CA" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:293px; height:80px;" allowTransparency="true"></iframe>
 			</li>

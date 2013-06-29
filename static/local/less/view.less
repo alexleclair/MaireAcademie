@@ -22,6 +22,7 @@
 				margin-bottom: 10px;
 				position: relative;
 				background-color: @gray;
+				background-image: url(img/stripe.png);
 
 				> span {
 					position: absolute;
@@ -47,6 +48,8 @@
 					height: 100%;
 					z-index:0;
 					background-size: cover;
+					background-position: center;
+					.opacity(0);
 				}
 				
 				.imgville,
@@ -84,15 +87,17 @@
 					}
 				}
 
-				&:hover {
-					article > span {
-						.opacity(1);
-					}
-					div {
-						.opacity(0);
-					}
+				
+			}	
+
+			&:hover {
+				article > span {
+					.opacity(1);
 				}
-			}			
+				div {
+					.opacity(0);
+				}
+			}		
 		}
 	}
 }
