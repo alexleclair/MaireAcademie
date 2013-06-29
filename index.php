@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Maire Académie - Qui sauverez-vous ?</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+
+	<meta property="og:image" content="http://www.maireacademie.ca/static/img/logo.png"/>
+	<meta property="og:title" content="Maire Académie"/>
+	<meta property="og:description" content="Prenez les choses en main et appelez au 1-866-MAIRE29 pour sauver votre ville." /> 
+
+
+
 	<link href='http://fonts.googleapis.com/css?family=Fauna+One' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" type="text/css" href="/static/master-main.css">
