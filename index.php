@@ -32,22 +32,6 @@ window.cityStats = "%%CITYSTATS%%";
 
 		<h2>Résultats</h2>
 		<ul class="clearfix resultats">
-		<?php 
-		for ($i=0; $i < 4; $i++) { 
-		?>
-			<li class="col col-lg-3 ">
-				<article>
-					<a href="tel:18666247329">Vote pour Montreal</a>
-					<span>44</span>
-
-					<aside>
-						<a href="">Aime ta ville</a>
-					</aside>
-				</article>
-			</li>
-		<?php
-		}
-		?>
 		</ul>
 		
 		<h2>En direct</h2>
@@ -64,14 +48,10 @@ window.cityStats = "%%CITYSTATS%%";
 		<script type="text/html" id="skeleton-city">
 			<li class="col col-lg-3 city" data-city-id="">
 				<article>
-					<b>Vote pour <span class="city-name">Montreal</span></b>
-					<span class="vote-count hide">0</span>
-
-					<aside>
-						Stuff pour FB LIKE
-						<a href="">Like ta ville</a>
-					</aside>
+					<a href="tel:18666247329">Vote pour Montreal</a>
+					<span>44</span>
 				</article>
+				<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fmontreal.maireacademie.com&amp;send=false&amp;layout=standard&amp;width=273&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=80&amp;appId=360831954023413" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:293px; height:80px;" allowTransparency="true"></iframe>
 			</li>
 		</script>
 	</section>
