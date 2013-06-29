@@ -17,7 +17,9 @@
 /**
 	Utils
 **/
-
+.a-center {
+	text-align: center;
+}
 .clear {
 	clear: both;
 }
@@ -38,7 +40,6 @@
 	-webkit-box-pack:center;
 	-webkit-box-align:center;
 
-	/* W3C */
 	display:box;
 	box-pack:center;
 	box-align:center;
@@ -55,13 +56,17 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-	color: @marine;
+	color: #fff;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
+	text-shadow: 1px 1px 0 @gray;
 }
 
 h1 {
-
+	color: @red;
+	margin-top: 0;
+	margin-bottom: 40px;
+	text-shadow: 1px 1px 0 @marine;
 }
 h2 {
 	color: @marine;

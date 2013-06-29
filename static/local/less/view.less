@@ -3,6 +3,11 @@
 	> header {
 
 		margin: 40px 0;
+		.well {
+			max-width: 600px;
+			margin: 0 auto;
+			background: #fff;
+		}
 		.lead {
 			font-size: 16px;
 		}
@@ -28,14 +33,24 @@
 					.opacity(.3);
 					font-size: 150px;
 					color: @red;
+					text-shadow: 1px 1px 0 #fff;
 					&.bignumber {
-						font-size: 120px;
+						font-size: 100px;
 					}
 				}
-
 				
-
-				> a,
+				.imgville {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					z-index:0;
+					background-size: cover;
+				}
+				
+				.imgville,
+				div > a,
 				> span {
 					min-height: 200px;
 					margin: 0;
@@ -49,6 +64,12 @@
 					font-style: italic;
 					color: @marine;
 				}
+	
+			}
+
+			iframe {
+				width: 100% !important;
+
 			}
 
 			@media (min-width: @screen-desktop) {
@@ -64,8 +85,11 @@
 				}
 
 				&:hover {
-					aside {
+					article > span {
 						.opacity(1);
+					}
+					div {
+						.opacity(0);
 					}
 				}
 			}			
@@ -76,8 +100,9 @@
 .livefeed {
 	> li {
 		line-height: 25px;
+		margin-bottom: 10px;
 	}
 	span {
-		color: lighten(@gray, 1%);
+//		color: lighten(@gray, 1%);
 	}
 }
