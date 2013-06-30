@@ -31,7 +31,7 @@ window.cityStats = "%%CITYSTATS%%";
 				<p class="lead">
 					Puisqu'aucun maire ne peut le faire, sauvez votre ville favorite.
 					<br>-<br>
-					4 villes en péril, 1 numéro facile. 1-866-MAIRE29 (1-866-624-7329)
+					4 villes en péril, 1 numéro facile. <b>1-866-MAIRE29</b> (1-866-624-7329)
 					<br>-<br>
 					Pas de téléphone sous la main? Donnez un peu d'amour à votre ville en cliquant « J'aime »
 				</p>
