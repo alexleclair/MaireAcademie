@@ -15,7 +15,7 @@ App =
 				responses:
 					intro:'./twilio/intro.xml'
 					outro:'./twilio/outro.xml'
-			updateStatsTimer:7000
+			updateStatsTimer:5000
 		stats: 
 			laval:
 				likes:0
@@ -118,6 +118,7 @@ App =
 						cities = [null, 'laval', 'montreal', 'longueuil', 'quebec'];
 						voteData = 
 							identity: req.query.From
+							time: new Date().getTime()
 							type:'call'
 
 						App._registerVote(cities[req.query.Digits], voteData)
@@ -181,8 +182,16 @@ App =
 			#http://api.facebook.com/restserver.php?method=links.getStats&urls=http://montreal.maireacademie.ca/&format=json
 
 		_handleHttpRequest: (req, res) ->
+
+				allowedHosts = ['www.maireacademie.ca', 'laval.maireacademie.ca', 'montreal.maireacademie.ca', 'longueuil.maireacademie.ca', 'quebec.maireacademie.ca', '342da8a6.ngrok.com'];
+
+				if allowedHosts.indexOf(req.headers.host) == -1
+					res.setHeader 'Location', 'http://'+allowedHosts[0]
+					res.writeHead '302'
+					return res.end '';
+
 				file = req.url.split('?')[0];
-				file = if file == '/' then 'index.html' else file;
+				file = if file == '/' then 'index.php' else file;
 				file = file.split('..').join('');
 
 				path = __dirname + '/' + App.config.wwwPath + file;
