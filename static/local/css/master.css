@@ -4288,18 +4288,18 @@ ul {
   .container .resultats > li:first-child .fb-like {
     margin-left: 0;
   }
-}
-.container .resultats > li:hover article > span {
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
-.container .resultats > li:hover div {
-  opacity: 0;
-  filter: alpha(opacity=0);
-}
-.container .resultats > li:hover div.fb-like {
-  opacity: 1;
-  filter: alpha(opacity=100);
+  .container .resultats > li:hover article > span {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+  .container .resultats > li:hover div {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+  .container .resultats > li:hover div.fb-like {
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
 }
 .livefeed > li {
   line-height: 25px;

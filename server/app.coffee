@@ -60,6 +60,7 @@ App =
 
 				@redisWorker = @redis.createClient(App.config.redisPort, App.config.redisHost)
 				
+				#Updating stats every X seconds. This coule be improved, but it doesn't make sense to fix it now - it works.
 				setInterval ->
 					App._updateCityStats('laval')
 					App._updateCityStats('longueuil')
@@ -68,7 +69,6 @@ App =
 				, @config.updateStatsTimer
 
 				@io.on 'connection', (socket)->
-					#console.log 'connected'
 					for key of App.stats
 						socket.emit 'stats', {city:key, stats:App.stats[key]}
 
@@ -76,7 +76,7 @@ App =
 						socket.emit 'vote', App.tickerData[i];
 
 		_handleAPICalls: (req, res) ->
-			parts = req.url.split('?')[0].split('/');
+			parts = req.url.split('?')[0].split('/'); #Very primitive module/method parsing at the moment. This is a small project, this works for now.
 			if parts.length < 4
 				res.writeHead '500'
 				res.end 'API calls expect at least a module/parameter combo.'
@@ -109,6 +109,7 @@ App =
 
 
 		_handleTwilioCall: (method, req,  res) ->
+			#This handles everything coming from Twilio. Right now, we only support calling - we could eventually support texting if we needed/wanted to.
 			switch method
 				when 'call'
 					console.log 'call'
@@ -179,7 +180,6 @@ App =
 
 					App.io.sockets.emit 'stats', {city:city, stats:App.stats[city]};
 
-			#http://api.facebook.com/restserver.php?method=links.getStats&urls=http://montreal.maireacademie.ca/&format=json
 
 		_handleHttpRequest: (req, res) ->
 
@@ -191,8 +191,8 @@ App =
 					return res.end '';
 
 				file = req.url.split('?')[0];
-				file = if file == '/' then 'index.php' else file;
-				file = file.split('..').join('');
+				file = if file == '/' then 'index.html' else file;
+				file = file.split('..').join(''); #Quick & Dirty, no ../ allowed.
 
 				path = __dirname + '/' + App.config.wwwPath + file;
 
